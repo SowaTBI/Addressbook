@@ -38,13 +38,15 @@ public class Person extends BaseType {
 
 	// Object Address
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="address_id")
     private Address address;
-
+    
 	// Object Company
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="company_id")
     private Company company;
     
     // Verein
-    @ManyToMany()
-    Set<Verein> verein;
+    @ManyToMany(mappedBy="members")
+    Set<Club> verein;
 }

@@ -2,7 +2,6 @@ package com.sowatec.addressbook.data.persistence.type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +23,4 @@ public class Contact extends BaseType {
 	
 	@Column(name="phone")
 	private String phone;
-	
-    @OneToOne(mappedBy = "contact")
-    private Person person;
 }

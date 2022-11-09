@@ -16,11 +16,7 @@ public class BaseController {
 	
 	public String index(Model model) {
 		
-		model.addAttribute("title", "Hello World");
-		log.info("Test");
-		
-		
-		return "/index";
+		return "page-index";
 	}
 	
 }
