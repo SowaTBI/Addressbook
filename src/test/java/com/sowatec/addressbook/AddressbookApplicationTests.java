@@ -18,11 +18,13 @@ import com.sowatec.addressbook.data.persistence.type.Person;
 @SpringBootTest
 class AddressbookApplicationTests {
 	
-	static Contact contact = new Contact("tim@sowatec.ch", "123-345-65454", null);
-	static Address address = new Address("Neuwiesenstrasse 4", "Wallisellen", 8304, "Schweiz", null, null);
-	static Address address2 = new Address("Neuwiesenstrasse 10", "Pfäffikon", 8904, "Australien", null, null);
-	static Person personA = new Person("Toni", "Pirosa", null, null, null, null);
-	static Person personB = new Person("Mark", "Eisen", null, null, null, null);
+	/*
+	
+	static Contact contact = new Contact("tim@sowatec.ch", "123-345-65454");
+	static Address address = new Address("Neuwiesenstrasse 4", "Wallisellen", 8304, "Schweiz");
+	static Address address2 = new Address("Neuwiesenstrasse 10", "Pfäffikon", 8904, "Australien");
+	static Person personA = new Person("Toni", "Pirosa", null, null, null);
+	static Person personB = new Person("Mark", "Eisen", null, null, null);
 	
 	static Company company = new Company("Sowatec", null, null);
 	
@@ -104,4 +106,5 @@ class AddressbookApplicationTests {
 		assertNotNull(personB.getAddress().getId());
 		System.out.println(personB.getFirstName() + ": " + personB.getCompany().getAddress());
 	}
+	*/
 }

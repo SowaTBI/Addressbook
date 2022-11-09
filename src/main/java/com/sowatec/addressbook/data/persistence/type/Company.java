@@ -26,9 +26,7 @@ public class Company extends BaseType {
 	@Column(name="name")
 	private String name;
 	
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Address> address = new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Address> locations = new HashSet<>();
     
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Person> person = new HashSet<>();
 }
