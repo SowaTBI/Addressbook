@@ -14,8 +14,6 @@ import com.sowatec.addressbook.data.persistence.type.Address;
 import com.sowatec.addressbook.data.persistence.type.Company;
 import com.sowatec.addressbook.data.persistence.type.Contact;
 import com.sowatec.addressbook.data.persistence.type.Person;
-import com.sowatec.addressbook.data.persistence.type.Person2Verein;
-import com.sowatec.addressbook.data.persistence.type.Verein;
 
 @SpringBootTest
 class AddressbookApplicationTests {
@@ -106,22 +104,4 @@ class AddressbookApplicationTests {
 		assertNotNull(personB.getAddress().getId());
 		System.out.println(personB.getFirstName() + ": " + personB.getCompany().getAddress());
 	}
-	
-	/*
-	@Test // Many To Many -> Verein To Person
-	public void test5() throws IOException {
-		
-		Verein verein = new Verein();
-		verein.setName("FC");
-		
-		Person person = new Person();
-		person.setFirstName("Moritz");
-		
-		Person2Verein person2verein = new Person2Verein();
-		person2verein.setPerson(person);
-		person2verein.setVerein(verein);
-		
-		System.out.println(person2verein.getPerson().getFirstName() + " gehört dem Verein: " + person2verein.getVerein().getName());
-	}
-	*/
 }
