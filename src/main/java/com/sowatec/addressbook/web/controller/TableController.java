@@ -10,11 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.sowatec.addressbook.data.persistence.service.AddressService;
+import com.sowatec.addressbook.data.persistence.service.ClubService;
 import com.sowatec.addressbook.data.persistence.service.CompanyService;
 import com.sowatec.addressbook.data.persistence.service.ContactService;
+import com.sowatec.addressbook.data.persistence.service.PersonService;
 import com.sowatec.addressbook.data.persistence.type.Address;
+import com.sowatec.addressbook.data.persistence.type.Club;
 import com.sowatec.addressbook.data.persistence.type.Company;
 import com.sowatec.addressbook.data.persistence.type.Contact;
+import com.sowatec.addressbook.data.persistence.type.Person;
 
 @Controller
 
@@ -28,6 +32,12 @@ public class TableController {
 	
 	@Autowired
 	private CompanyService companyService;
+	
+	@Autowired
+	private PersonService personService;
+	
+	@Autowired
+	private ClubService clubService;
 
 	@GetMapping("/table-contact")
 	public String tableContact(Model model) {
@@ -76,4 +86,70 @@ public class TableController {
 
 		return "page-table-company";
 	}
+	
+	@GetMapping("/table-person")
+	public String tablePerson(Model model) {
+
+		Iterable<Person> iterable = personService.findAll();
+		List<Person> persons = new ArrayList<>();
+
+		Iterator<Person> iterator = iterable.iterator();
+		while (iterator.hasNext()) {
+			persons.add(iterator.next());
+		}
+
+		model.addAttribute("persons", persons.toArray());
+
+		return "page-table-person";
+	}
+	
+	@GetMapping("/table-club")
+	public String tableClub(Model model) {
+
+		Iterable<Club> iterable = clubService.findAll();
+		List<Club> clubs = new ArrayList<>();
+
+		Iterator<Club> iterator = iterable.iterator();
+		while (iterator.hasNext()) {
+			clubs.add(iterator.next());
+		}
+
+		model.addAttribute("clubs", clubs.toArray());
+
+		return "page-table-club";
+	}
+	
+	@GetMapping("/create-company")
+	public String createCompany() {
+
+		return "page-create-company";
+	}
+	
+	
+	// Noch zu machen
+	
+	@GetMapping("/create-contact")
+	public String createContact() {
+
+		return "page-create-contact";
+	}
+	
+	@GetMapping("/create-address")
+	public String createAddress() {
+
+		return "page-create-address";
+	}
+	
+	@GetMapping("/create-person")
+	public String createPerson() {
+
+		return "page-create-person";
+	}
+	
+	@GetMapping("/create-club")
+	public String createClub() {
+
+		return "page-create-club";
+	}
+	
 }

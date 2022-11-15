@@ -57,14 +57,14 @@
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Tables:</h6>
-						<a class="collapse-item" href="/index">Person</a> <a
-							class="collapse-item" href="/index">Address</a> <a
-							class="collapse-item" href="/index">Company</a> <a
-							class="collapse-item" href="/index">Contact</a> <a
-							class="collapse-item" href="/index">Club</a>
+						<a class="collapse-item" th:href="@{/table-person}">Person</a> <a
+							class="collapse-item" th:href="@{/table-address}">Address</a> <a
+							class="collapse-item" th:href="@{/table-company}">Company</a> <a
+							class="collapse-item" th:href="@{/table-contact}">Contact</a> <a
+							class="collapse-item" th:href="@{/table-club}">Club</a>
 					</div>
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="/index"> <i
+			<li class="nav-item"><a class="nav-link" th:href="@{/create-contact}"> <i
 					class="fas fa-fw fa-plus"></i> <span>Create Data</span></a></li>
 			<hr class="sidebar-divider">
 			<div class="text-center d-none d-md-inline">

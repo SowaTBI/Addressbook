@@ -30,6 +30,9 @@ public class Address extends BaseType {
 	
 	@Column(name="country")
 	private String country;
-    
-    
+	
+	public String getString() {
+		
+		return street + " " + zip + " " + city + " " + country;
+	}
 }

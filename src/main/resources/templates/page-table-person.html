@@ -64,7 +64,7 @@
 							class="collapse-item" th:href="@{/table-club}">Club</a>
 					</div>
 				</div></li>
-			<li class="nav-item"><a class="nav-link" th:href="@{/create-address}"> <i
+			<li class="nav-item"><a class="nav-link" th:href="@{/create-person}"> <i
 					class="fas fa-fw fa-plus"></i> <span>Create Data</span></a></li>
 			<hr class="sidebar-divider">
 			<div class="text-center d-none d-md-inline">
@@ -118,18 +118,24 @@
 									cellspacing="0">
 									<thead>
 										<tr>
-											<th>Street</th>
-											<th>Zip</th>
-											<th>City</th>
-											<th>Country</th>
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Address</th>
+											<th>Company</th>
+											<th>Email</th>
+											<th>Phone</th>
+											<th>Clubs</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr th:each="address : ${addresses}">
-											<td th:text="${address.street}"></td>
-											<td th:text="${address.zip}"></td>
-											<td th:text="${address.city}"></td>
-											<td th:text="${address.country}"></td>
+										<tr th:each="person : ${persons}">
+											<td th:text="${person.firstName}"></td>
+											<td th:text="${person.lastName}"></td>
+											<td th:text="${person.address.getString()}"></td>
+											<td th:text="${person.company.name}"></td>
+											<td th:text="${person.contact.email}"></td>
+											<td th:text="${person.contact.phone}"></td>
+											<td th:text="${person.getClubsAsString()}"></td>
 										</tr>
 									</tbody>
 								</table>

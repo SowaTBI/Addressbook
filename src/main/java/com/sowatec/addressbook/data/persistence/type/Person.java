@@ -1,6 +1,6 @@
 package com.sowatec.addressbook.data.persistence.type;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,16 +37,28 @@ public class Person extends BaseType {
 	private Contact contact;
 
 	// Object Address
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="address_id")
-    private Address address;
-    
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "address_id")
+	private Address address;
+
 	// Object Company
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="company_id")
-    private Company company;
-    
-    // Verein
-    @ManyToMany(mappedBy="members")
-    Set<Club> verein;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "company_id")
+	private Company company;
+
+	// Verein
+	@ManyToMany(mappedBy = "members")
+	private List<Club> verein;
+
+	public String getClubsAsString() {
+
+		String[] clubNames = new String[verein.size()];
+		
+		for (int i = 0; i < verein.size(); i++) {
+			
+			clubNames[i] = verein.get(i).getName();
+		}
+		
+		return String.join(", ", clubNames);
+	}
 }

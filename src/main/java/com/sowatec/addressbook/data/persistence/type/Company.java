@@ -1,12 +1,10 @@
 package com.sowatec.addressbook.data.persistence.type;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,12 +19,14 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 
+
 public class Company extends BaseType {
 	
 	@Column(name="name")
 	private String name;
-	
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Address> locations = new HashSet<>();
     
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "address_id")
+	private Address address;
 }

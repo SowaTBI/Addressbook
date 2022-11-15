@@ -64,7 +64,7 @@
 							class="collapse-item" th:href="@{/table-club}">Club</a>
 					</div>
 				</div></li>
-			<li class="nav-item"><a class="nav-link" th:href="@{/create-address}"> <i
+			<li class="nav-item"><a class="nav-link" th:href="@{/create-club}"> <i
 					class="fas fa-fw fa-plus"></i> <span>Create Data</span></a></li>
 			<hr class="sidebar-divider">
 			<div class="text-center d-none d-md-inline">
@@ -118,18 +118,12 @@
 									cellspacing="0">
 									<thead>
 										<tr>
-											<th>Street</th>
-											<th>Zip</th>
-											<th>City</th>
-											<th>Country</th>
+											<th>Name</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr th:each="address : ${addresses}">
-											<td th:text="${address.street}"></td>
-											<td th:text="${address.zip}"></td>
-											<td th:text="${address.city}"></td>
-											<td th:text="${address.country}"></td>
+										<tr th:each="club : ${clubs}">
+											<td th:text="${club.name}"></td>
 										</tr>
 									</tbody>
 								</table>
