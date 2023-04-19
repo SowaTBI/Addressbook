@@ -4,6 +4,8 @@ package com.sowatec.addressbook.data.persistence.type;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
+import com.sowatec.addressbook.data.model.AddressModel;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,5 +36,14 @@ public class Address extends BaseType {
 	public String getString() {
 		
 		return street + " " + zip + " " + city + " " + country;
+	}
+
+	public void apply(AddressModel addressModel) {
+		
+		setStreet(addressModel.getStreet());
+		setCity(addressModel.getCity());
+		setZip(addressModel.getZip());
+		setCountry(addressModel.getCountry());
+		
 	}
 }

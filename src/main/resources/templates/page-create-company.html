@@ -2,26 +2,17 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet" type="text/css"
-	href="../static/vendor/fontawesome-free/css/all.min.css"
-	th:href="@{vendor/fontawesome-free/css/all.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/vendor/fontawesome-free/css/all.min.css" th:href="@{vendor/fontawesome-free/css/all.min.css}">
    
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}">
    
-<link rel="stylesheet" type="text/css"
-	href="../static/css/sb-admin-2.min.css"
-	th:href="@{css/sb-admin-2.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/css/sb-admin-2.min.css" th:href="@{css/sb-admin-2.min.css}">
    
-<link rel="stylesheet" type="text/css"
-	href="../static/vendor/datatables/dataTables.bootstrap4.min.css"
-	th:href="@{vendor/datatables/dataTables.bootstrap4.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/vendor/datatables/dataTables.bootstrap4.min.css" th:href="@{vendor/datatables/dataTables.bootstrap4.min.css}">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Addressbook | Dashboard</title>
@@ -29,41 +20,44 @@
 
 <body id="page-top">
 	<div id="wrapper">
-		<ul
-			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-			id="accordionSidebar">
-			<a
-				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="/index">
+		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+			<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<em class="fas fa-address-book"></em>
 				</div>
 				<div class="sidebar-brand-text mx-3">Addressbook</div>
 			</a>
 			<hr class="sidebar-divider my-0">
-			<li class="nav-item active"><a class="nav-link" href="/index">
-					<i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span>
-			</a></li>
+			<li class="nav-item active">
+				<a class="nav-link" href="/index">
+					<i class="fas fa-fw fa-tachometer-alt"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
 			<hr class="sidebar-divider">
 			<div class="sidebar-heading">Database</div>
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTwo"
-				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-table"></i> <span>View Data</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionSidebar">
+			<li class="nav-item">
+				<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					<i class="fas fa-fw fa-table"></i>
+					<span>View Data</span>
+				</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Tables:</h6>
-						<a class="collapse-item" th:href="@{/table-person}">Person</a> <a
-							class="collapse-item" th:href="@{/table-address}">Address</a> <a
-							class="collapse-item" th:href="@{/table-company}">Company</a> <a
-							class="collapse-item" th:href="@{/table-contact}">Contact</a> <a
-							class="collapse-item" th:href="@{/table-club}">Club</a>
+						<a class="collapse-item" th:href="@{/table-person}">Person</a>
+						<a class="collapse-item" th:href="@{/table-address}">Address</a>
+						<a class="collapse-item" th:href="@{/table-company}">Company</a>
+						<a class="collapse-item" th:href="@{/table-contact}">Contact</a>
+						<a class="collapse-item" th:href="@{/table-club}">Club</a>
 					</div>
-				</div></li>
-			<li class="nav-item"><a class="nav-link" href="/index"> <i
-					class="fas fa-fw fa-plus"></i> <span>Create Data</span></a></li>
+				</div>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/index">
+					<i class="fas fa-fw fa-plus"></i>
+					<span>Create Data</span>
+				</a>
+			</li>
 			<hr class="sidebar-divider">
 			<div class="text-center d-none d-md-inline">
 				<button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -72,77 +66,54 @@
 		</ul>
 		<div id="content-wrapper" class="d-flex flex-column">
 			<div id="content">
-				<nav
-					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+				<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 					<ul class="navbar-nav ml-auto">
 						<div class="topbar-divider d-none d-sm-block"></div>
-						<li class="nav-item dropdown no-arrow"><a
-							class="nav-link dropdown-toggle" href="#" id="userDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
-									McGee</span> <img class="img-profile rounded-circle"
-								src="../static/img/undraw_profile.svg"
-								th:src="@{img/undraw_profile.svg}">
-						</a>
-							<div
-								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="/index"> <em
-									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></em>
+						<li class="nav-item dropdown no-arrow">
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+								<img class="img-profile rounded-circle" src="../static/img/undraw_profile.svg" th:src="@{img/undraw_profile.svg}">
+							</a>
+							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="/index">
+									<em class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></em>
 									Profile
-								</a> <a class="dropdown-item" href="/index"> <em
-									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></em>
+								</a>
+								<a class="dropdown-item" href="/index">
+									<em class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></em>
 									Settings
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/index" data-toggle="modal"
-									data-target="#logoutModal"> <em
-									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></em>
+								<a class="dropdown-item" href="/index" data-toggle="modal" data-target="#logoutModal">
+									<em class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></em>
 									Logout
 								</a>
-							</div></li>
+							</div>
+						</li>
 					</ul>
 				</nav>
 				<div class="container-fluid">
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 					</div>
-					<form>
+					<form action="#" th:action="@{/create-company/submit}" th:object="${CompanyModel}" method="post">
 						<div class="row g-3">
 							<div class="col-md-6">
 								<label for="inputName" class="form-label">Company</label>
-								<input type="text" class="form-control" id="inputName" placeholder="...">
+								<input th:field="*{name}" type="text" class="form-control" id="inputName" placeholder="...">
 								<br>
 							</div>
 						</div>
 						<div class="row g-3">
 							<div class="col-md-6">
-								<label for="inputAddress" class="form-label">Location</label>
-								<input type="text" class="form-control" id="inputAddress" placeholder="...">
+								<label for="selectAddress" class="form-label">Location</label>
+								<select th:field="*{addressId}" class="form-control" id="selectAddress">
+									<option th:each="address: ${Addresses}" th:value="${address.getId()}" th:text="${address.getString()}"></option>
+								</select>
 								<br>
 							</div>
 						</div>
-						<div class="row g-3">
-							<div class="col-md-2">
-								<label for="inputZip" class="form-label">Postal Code</label>
-								<input type="text" class="form-control" id="inputZip" placeholder="...">
-							</div>
-							<div class="col-md-4">
-								<label for="inputCity" class="form-label">City</label>
-								<input type="text" class="form-control" id="inputCity" placeholder="...">
-								<br>
-							</div>
-						</div>
-						<div class="row g-3">
-							<div class="col-md-6">
-								<label for="inputCountry" class="form-label">Country</label>
-								<input type="text" class="form-control" id="inputCountry" placeholder="...">
-								<br>
-							</div>
-						</div>
-	    				<button class="btn btn-primary" type="submit">Submit form</button>
+						<button class="btn btn-primary" type="submit">Submit form</button>
 					</form>
 				</div>
 			</div>
@@ -156,26 +127,22 @@
 		</div>
 	</div>
 
-	<a class="scroll-to-top rounded" href="#page-top"> <i
-		class="fas fa-angle-up"></i>
+	<a class="scroll-to-top rounded" href="#page-top">
+		<i class="fas fa-angle-up"></i>
 	</a>
 
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
+					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
+				<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
 				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 					<a class="btn btn-primary" href="/index">Logout</a>
 				</div>
 			</div>
@@ -183,28 +150,21 @@
 	</div>
 
 	<div>
-		<script src="../static/vendor/jquery/jquery.min.js"
-			th:src="@{vendor/jquery/jquery.min.js}"></script>
+		<script src="../static/vendor/jquery/jquery.min.js" th:src="@{vendor/jquery/jquery.min.js}"></script>
 
-		<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"
-			th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js" th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-		<script src="../static/vendor/jquery-easing/jquery.easing.min.js"
-			th:src="@{vendor/jquery-easing/jquery.easing.min.js}">
+		<script src="../static/vendor/jquery-easing/jquery.easing.min.js" th:src="@{vendor/jquery-easing/jquery.easing.min.js}">
 			
 		</script>
 
-		<script src="../static/js/sb-admin-2.min.js"
-			th:src="@{js/sb-admin-2.min.js}"></script>
+		<script src="../static/js/sb-admin-2.min.js" th:src="@{js/sb-admin-2.min.js}"></script>
 
-		<script src="../static/vendor/datatables/jquery.dataTables.min.js"
-			th:src="@{vendor/datatables/jquery.dataTables.min.js}"></script>
+		<script src="../static/vendor/datatables/jquery.dataTables.min.js" th:src="@{vendor/datatables/jquery.dataTables.min.js}"></script>
 
-		<script src="../static/vendor/datatables/dataTables.bootstrap4.min.js"
-			th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+		<script src="../static/vendor/datatables/dataTables.bootstrap4.min.js" th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>
 
-		<script src="../static/js/demo/datatables-demo.js"
-			th:src="@{js/demo/datatables-demo.js}"></script>
+		<script src="../static/js/demo/datatables-demo.js" th:src="@{js/demo/datatables-demo.js}"></script>
 	</div>
 </body>
 

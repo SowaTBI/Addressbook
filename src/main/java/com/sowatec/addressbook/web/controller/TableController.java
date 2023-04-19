@@ -119,37 +119,6 @@ public class TableController {
 		return "page-table-club";
 	}
 	
-	@GetMapping("/create-company")
-	public String createCompany() {
 
-		return "page-create-company";
-	}
-	
-	
-	// Noch zu machen
-	
-	@GetMapping("/create-contact")
-	public String createContact() {
-
-		return "page-create-contact";
-	}
-	
-	@GetMapping("/create-address")
-	public String createAddress() {
-
-		return "page-create-address";
-	}
-	
-	@GetMapping("/create-person")
-	public String createPerson() {
-
-		return "page-create-person";
-	}
-	
-	@GetMapping("/create-club")
-	public String createClub() {
-
-		return "page-create-club";
-	}
 	
 }

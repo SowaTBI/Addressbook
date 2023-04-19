@@ -2,21 +2,13 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet" type="text/css"
-	href="../static/vendor/fontawesome-free/css/all.min.css"
-	th:href="@{vendor/fontawesome-free/css/all.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/vendor/fontawesome-free/css/all.min.css" th:href="@{/vendor/fontawesome-free/css/all.min.css}">
    
-<link rel="stylesheet" type="text/css"
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i}">
    
-<link rel="stylesheet" type="text/css"
-	href="../static/css/sb-admin-2.min.css"
-	th:href="@{css/sb-admin-2.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/css/sb-admin-2.min.css" th:href="@{/css/sb-admin-2.min.css}">
    
-<link rel="stylesheet" type="text/css"
-	href="../static/vendor/datatables/dataTables.bootstrap4.min.css"
-	th:href="@{vendor/datatables/dataTables.bootstrap4.min.css}">
+<link rel="stylesheet" type="text/css" href="../static/vendor/datatables/dataTables.bootstrap4.min.css" th:href="@{/vendor/datatables/dataTables.bootstrap4.min.css}">
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,7 +75,7 @@
 								class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
 									McGee</span> <img class="img-profile rounded-circle"
 								src="../static/img/undraw_profile.svg"
-								th:src="@{img/undraw_profile.svg}">
+								th:src="@{/img/undraw_profile.svg}">
 						</a>
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -109,19 +101,15 @@
 						class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 					</div>
-					<form action="#" th:action="@{/create-contact/submit}" th:object="${ContactModel}" method="post">
+					<form action="#" th:action="@{/update-club/{id}/submit(id=${ClubModel.id})}" th:object="${ClubModel}" method="post">
 						<div class="row g-3">
 							<div class="col-md-4">
-								<label for="inputEmail" class="form-label">Email</label>
-								<input th:field="*{email}" type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
-							</div>
-							<div class="col-md-4">
-								<label for="inputPhone" class="form-label">Phone Nr</label>
-								<input th:field="*{phone}" type="tel" class="form-control" id="inputPhone" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+								<label for="inputClub" class="form-label">Club</label>
+								<input th:field="*{name}" type="text" class="form-control" id="inputClub" placeholder="...">
 								<br>
 							</div>
 						</div>
-	    				<button class="btn btn-primary" type="submit">Create</button>
+	    				<button class="btn btn-primary" type="submit">Update</button>
 					</form>
 				</div>
 			</div>
@@ -163,28 +151,21 @@
 	</div>
 
 	<div>
-		<script src="../static/vendor/jquery/jquery.min.js"
-			th:src="@{vendor/jquery/jquery.min.js}"></script>
+		<script src="../static/vendor/jquery/jquery.min.js" th:src="@{/vendor/jquery/jquery.min.js}"></script>
 
-		<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"
-			th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
-		<script src="../static/vendor/jquery-easing/jquery.easing.min.js"
-			th:src="@{vendor/jquery-easing/jquery.easing.min.js}">
+		<script src="../static/vendor/jquery-easing/jquery.easing.min.js" th:src="@{/vendor/jquery-easing/jquery.easing.min.js}">
 			
 		</script>
 
-		<script src="../static/js/sb-admin-2.min.js"
-			th:src="@{js/sb-admin-2.min.js}"></script>
+		<script src="../static/js/sb-admin-2.min.js" th:src="@{/js/sb-admin-2.min.js}"></script>
 
-		<script src="../static/vendor/datatables/jquery.dataTables.min.js"
-			th:src="@{vendor/datatables/jquery.dataTables.min.js}"></script>
+		<script src="../static/vendor/datatables/jquery.dataTables.min.js" th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
 
-		<script src="../static/vendor/datatables/dataTables.bootstrap4.min.js"
-			th:src="@{vendor/datatables/dataTables.bootstrap4.min.js}"></script>
+		<script src="../static/vendor/datatables/dataTables.bootstrap4.min.js" th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
 
-		<script src="../static/js/demo/datatables-demo.js"
-			th:src="@{js/demo/datatables-demo.js}"></script>
+		<script src="../static/js/demo/datatables-demo.js" th:src="@{/js/demo/datatables-demo.js}"></script>
 	</div>
 </body>
 

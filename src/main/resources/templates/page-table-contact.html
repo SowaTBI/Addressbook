@@ -120,12 +120,14 @@
 										<tr>
 											<th>Email</th>
 											<th>PhoneNr</th>
+											<th>Update</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr th:each="contact : ${contacts}">
 											<td th:text="${contact.email}"></td>
 											<td th:text="${contact.phone}"></td>
+											<td><a th:href="@{/update-contact/{id}(id=${contact.id})}">Edit</a></td>
 										</tr>
 									</tbody>
 								</table>

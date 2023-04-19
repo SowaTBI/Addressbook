@@ -10,6 +10,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.sowatec.addressbook.data.model.PersonModel;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -60,5 +62,16 @@ public class Person extends BaseType {
 		}
 		
 		return String.join(", ", clubNames);
+	}
+	
+	public void apply(PersonModel personModel) {
+		
+		setFirstName(personModel.getFirstName());
+		setLastName(personModel.getLastName());
+		setContact(personModel.getContact());
+		setAddress(personModel.getAddress());
+		setCompany(personModel.getCompany());
+		
+		
 	}
 }

@@ -125,6 +125,7 @@
 											<th>Email</th>
 											<th>Phone</th>
 											<th>Clubs</th>
+											<th>Update</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -136,6 +137,7 @@
 											<td th:text="${person.contact.email}"></td>
 											<td th:text="${person.contact.phone}"></td>
 											<td th:text="${person.getClubsAsString()}"></td>
+											<td><a th:href="@{/update-person/{id}(id=${person.id})}">Edit</a></td>
 										</tr>
 									</tbody>
 								</table>

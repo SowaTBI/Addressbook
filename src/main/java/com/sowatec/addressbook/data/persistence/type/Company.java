@@ -6,6 +6,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.sowatec.addressbook.data.model.CompanyModel;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,4 +31,11 @@ public class Company extends BaseType {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "address_id")
 	private Address address;
+	
+	
+	public void apply(CompanyModel companyModel) {
+		setName(companyModel.getName());
+		setAddress(companyModel.getAddress());
+	}
+	
 }

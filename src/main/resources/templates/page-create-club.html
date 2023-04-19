@@ -109,11 +109,11 @@
 						class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 					</div>
-					<form>
+					<form action="#" th:action="@{/create-club/submit}" th:object="${ClubModel}" method="post">
 						<div class="row g-3">
 							<div class="col-md-4">
 								<label for="inputClub" class="form-label">Club</label>
-								<input type="text" class="form-control" id="inputClub" placeholder="...">
+								<input th:field="*{name}" type="text" class="form-control" id="inputClub" placeholder="...">
 								<br>
 							</div>
 						</div>

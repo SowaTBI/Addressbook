@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.sowatec.addressbook.data.model.ClubModel;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,4 +32,8 @@ public class Club extends BaseType {
 	@ManyToMany
 	@JoinTable(name = "club_member", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "club_id"))
 	Set<Person> members;
+	
+	public void apply(ClubModel clubModel) {
+		setName(clubModel.getName());
+	}
 }

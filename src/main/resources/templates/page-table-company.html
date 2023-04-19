@@ -120,12 +120,14 @@
 										<tr>
 											<th>Name</th>
 											<th>Location</th>
+											<th>Update</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr th:each="company : ${companies}">
 											<td th:text="${company.name}"></td>
 											<td th:text="${company.address.getString()}"></td>
+											<td><a th:href="@{/update-company/{id}(id=${company.id})}">Edit</a></td>
 										</tr>
 									</tbody>
 								</table>
